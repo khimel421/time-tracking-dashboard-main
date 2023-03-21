@@ -23,7 +23,8 @@ module.exports = {
     },
     extend: {
       fontFamily:{
-        'rubik' : ["Josefin Sans", "sans-serif"],
+        'josefin' : ["Josefin Sans", "sans-serif"],
+        'rubik' : ["Rubik", "sans-serif"],
       },
     },
   },

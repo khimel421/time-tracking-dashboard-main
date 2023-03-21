@@ -1,23 +1,29 @@
 import React from "react";
 
-function Box ({num}){
+function Box ({color , img , title , data , testing}){
+
+    const {current_hour, previous_time , time} = data
+
+
 
     return(
-        <div className={` font-rubikbg-work h-full rounded-2xl relative`}>
-            <div className={`rounded-2xl bg-work flex justify-end 
+        <div className={` font-rubik ${color}  h-full rounded-2xl relative`}>
+            <div className={`rounded-2xl ${color} flex justify-end 
             overflow-hidden `}>
-                <img className="mr-3" src="/images/icon-work.svg" alt="" />
+                <img className="mr-3" src={img} alt="" />
             </div>
-            <div className={`absolute top-10 left-0 right-0 bg-dark-blue lg:h-[203px] sm:h-28 rounded-2xl flex justify-around items-center`}>
-                <div className="left text-[#f2f5f3]">
-                    <p>Work</p>
-                    <p className=" text-2xl">32hrs</p>
-                </div>
-                <div className="right flex flex-col gap-4 justify-end items-end text-pale-blue ">
-                    <div className="hover:text-[#ffffff] hover:brightness-125 cursor-pointer">
-                        <img className=" " src=" \images\icon-ellipsis.svg" alt="" />
+            <div className={`absolute top-10 left-0 right-0 bg-dark-blue lg:h-[190px] sm:h-28 rounded-2xl `}>
+                <div className="info-container w-[85%] mx-auto flex flex-col justify-center gap-4 mt-8">
+                    <div className={`top flex justify-between items-center text-[#ffffff]`}>
+                        <p>{title}</p>
+                        <div className=" hover:brightness-125 duration-300 cursor-pointer">
+                            <img className=" " src=" \images\icon-ellipsis.svg" alt="" />
+                        </div>
                     </div>
-                    <p className="" >Last week - 8hrs</p>
+                    <div className={`bottom flex lg:flex-col justify-between sm:items-center lg:items-start lg:gap-5`}>
+                        <p className=" sm:text-3xl lg:text-5xl text-[#ffffff] font-rubik font-light">{current_hour}hrs</p>
+                        <p className=" text-pale-blue">Last {time} - {previous_time}hrs</p>
+                    </div>
                 </div>
             </div>
         </div>
