@@ -12,7 +12,7 @@ function Box ({color , img , title , data , testing}){
             overflow-hidden `}>
                 <img className="mr-3" src={img} alt="" />
             </div>
-            <div className={`absolute top-10 left-0 right-0 bg-dark-blue lg:h-[190px] sm:h-28 rounded-2xl `}>
+            <div className={`absolute top-10 left-0 right-0 bottom-0 bg-dark-blue lg:h-[190px] sm:h-28 rounded-2xl `}>
                 <div className="info-container w-[85%] mx-auto flex flex-col justify-center gap-4 mt-8">
                     <div className={`top flex justify-between items-center text-[#ffffff]`}>
                         <p>{title}</p>

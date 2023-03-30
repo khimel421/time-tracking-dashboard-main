@@ -1,9 +1,17 @@
 import React from "react";
-import { useState } from "react";
+import { useState,useEffect, useRef } from "react";
 import data_all from "./data.json"
 import Box from "./components/box";
 
 function App (){
+
+    const refDailyBtn = useRef(null)
+    
+    useEffect(() => {
+        handle_Daily_Info();
+        refDailyBtn.current.focus()
+        refDailyBtn.current.style.outline = 'none'
+    },[])
 
     const [work,setWork] = useState(
         {
@@ -267,9 +275,9 @@ function App (){
                     </div>
                 </div>
                 <div className=" lg:ml-6 btn-box sm:flex lg:flex-col sm:gap-6 lg:gap-2 sm:justify-center text-start sm:text-xl lg:text-lg pb-3">
-                    <button className="  lg:text-start text-[#6368a4] hover:text-[#f0f3ff] active:text-[#f0f3ff] duration-300" onClick={handle_Daily_Info}>Daily</button>
-                    <button className="  lg:text-start text-[#6368a4] active:text-[#f0f3ff] hover:text-[#f0f3ff] duration-300" onClick={handle_Weekly_Info}>Weekly</button>
-                    <button className="  lg:text-start text-[#6368a4] active:text-[#f0f3ff] hover:text-[#f0f3ff] duration-300" onClick={handle_monthly_Info}>Monthly</button>
+                    <button className="  lg:text-start text-[#6368a4] hover:text-[#f0f3ff] active:text-[#f0f3ff] duration-300 focus:text-[#f0f3ff]" onClick={handle_Daily_Info} ref = {refDailyBtn}>Daily</button>
+                    <button className="  lg:text-start text-[#6368a4] active:text-[#f0f3ff] hover:text-[#f0f3ff] duration-300 focus:text-[#f0f3ff]" onClick={handle_Weekly_Info}>Weekly</button>
+                    <button className="  lg:text-start text-[#6368a4] active:text-[#f0f3ff] hover:text-[#f0f3ff] duration-300 focus:text-[#f0f3ff]" onClick={handle_monthly_Info}>Monthly</button>
                 </div>
             </div>
             {design_box.map((item,index) => {
